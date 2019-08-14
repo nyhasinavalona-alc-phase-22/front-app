@@ -1,8 +1,8 @@
-import { createSelector } from '@ngrx/store';
-import { AuthenticationState } from '../reducers/authentication.reducers';
+import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { AuthenticationState, authenticationStateKey } from '../reducers/authentication.reducers';
 import { State } from '../../../../core/store/reducers/app.reducers';
 
-export const getAuthenticationState = (state: State) => state.authentication;
+export const getAuthenticationState = createFeatureSelector<State, AuthenticationState>(authenticationStateKey);
 
 export const getSignInError = createSelector(getAuthenticationState, (state: AuthenticationState) => state.signInError);
 
