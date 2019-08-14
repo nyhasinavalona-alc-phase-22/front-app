@@ -1,5 +1,5 @@
 <div [formGroup]="form">
-    <label [attr.for]="question.key">{{ question.key }}</label>
+    <label [attr.for]="question.key">{{ question.label }}</label>
     <ng-container [ngSwitch]="question.controlType">
         <input *ngSwitchCase="textBox" [formControlName]="question.key" [id]="question.key" [type]="question.type">
         <select *ngSwitchCase="dropdown" [formControlName]="question.key">
