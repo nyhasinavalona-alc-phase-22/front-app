@@ -3,13 +3,17 @@ import { CommonModule } from '@angular/common';
 
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { SignInRootComponent } from './containers/sign-in-root/sign-in-root.component';
-import { SignInFormComponent } from './components/sign-in-form/sign-in-form.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
-  declarations: [SignInRootComponent, SignInFormComponent],
-  imports: [
-    CommonModule,
-    AuthenticationRoutingModule
-  ]
+    declarations: [
+        SignInRootComponent
+    ],
+    imports: [
+        CommonModule,
+        AuthenticationRoutingModule,
+        SharedModule
+    ]
 })
-export class AuthenticationModule { }
+export class AuthenticationModule {
+}
