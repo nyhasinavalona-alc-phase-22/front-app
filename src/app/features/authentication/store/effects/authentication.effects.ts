@@ -10,13 +10,11 @@ export class AuthenticationEffects {
     @Effect()
     signIn$ = createEffect(() => this.actions$.pipe(
         ofType(signIn),
-        switchMap((action) => this.authenticationService.signIn({
-            userName: action.userName,
-            password: action.password
-        }).pipe(
-            map((response: object) => signInSuccess({ user: response })),
-            catchError((error) => of(signInFail({ error })))
-        ))
+        switchMap((action) =>
+            this.authenticationService.signIn({ userName: action.userName, password: action.password }).pipe(
+                map((response: object) => signInSuccess({ user: response })),
+                catchError((error) => of(signInFail({ error })))
+            ))
     ));
 
     constructor(private actions$: Actions, private authenticationService: AuthenticationService) {
