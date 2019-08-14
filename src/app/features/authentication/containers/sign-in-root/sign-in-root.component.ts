@@ -21,20 +21,21 @@ export class SignInRootComponent implements OnInit {
             new TextBoxQuestion({
                 type: 'text',
                 key: 'userName',
-                label: '',
+                label: 'User name',
                 required: true,
                 order: 1
             }),
             new TextBoxQuestion({
                 type: 'password',
                 key: 'password',
+                label: 'Password',
                 required: true,
                 order: 2
             })
         ];
     }
 
-    onSave(payload: { email: string, password: string }) {
+    onSave(payload: { userName: string, password: string }) {
         this.authenticationStore.dispatch(signIn(payload));
     }
 }
