@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionBase } from '../../../../shared/types/question-base.class';
 import { TextBoxQuestion } from '../../../../shared/types/text-box-question.class';
+import { Store } from '@ngrx/store';
+import { AuthenticationState } from '../../store/reducers/authentication.reducers';
+import { signIn } from '../../store/actions/authentication.actions';
 
 @Component({
     selector: 'app-sign-in-root',
@@ -10,7 +13,7 @@ import { TextBoxQuestion } from '../../../../shared/types/text-box-question.clas
 export class SignInRootComponent implements OnInit {
     questions: QuestionBase<any>[];
 
-    constructor() {
+    constructor(private authenticationStore: Store<AuthenticationState>) {
     }
 
     ngOnInit() {
@@ -31,7 +34,7 @@ export class SignInRootComponent implements OnInit {
         ];
     }
 
-    onSave() {
-        /* */
+    onSave(payload: { email: string, password: string }) {
+        this.authenticationStore.dispatch(signIn(payload));
     }
 }
