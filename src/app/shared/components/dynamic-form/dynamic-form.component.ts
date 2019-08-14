@@ -4,11 +4,11 @@ import { FormGroup } from '@angular/forms';
 import { QuestionControlService } from '../../services/question-control.service';
 
 @Component({
-    selector: 'app-question-form',
-    templateUrl: './question-form.component.html',
-    styleUrls: ['./question-form.component.scss']
+    selector: 'app-dynamic-form',
+    templateUrl: './dynamic-form.component.html',
+    styleUrls: ['./dynamic-form.component.scss']
 })
-export class QuestionFormComponent implements OnInit {
+export class DynamicFormComponent implements OnInit {
     form: FormGroup;
     @Input() questions: QuestionBase<any>[] = [];
     @Input() buttonLabel: string;

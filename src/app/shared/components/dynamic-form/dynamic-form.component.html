@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <ng-container *ngFor="let question of questions">
-        <app-dynamic-form-question [form]="form" [question]="question"></app-dynamic-form-question>
+        <app-form-question [form]="form" [question]="question"></app-form-question>
     </ng-container>
     <button [disabled]="!form.valid">{{ buttonLabel || 'Submit' }}</button>
 </form>

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { QuestionControlService } from './services/question-control.service';
-import { QuestionFormComponent } from './components/question-form/question-form.component';
-import { DynamicFormQuestionComponent } from './components/dynamic-form-question/dynamic-form-question.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+import { FormQuestionComponent } from './components/form-question/form-question.component';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [QuestionFormComponent, DynamicFormQuestionComponent],
+    declarations: [DynamicFormComponent, FormQuestionComponent],
     imports: [
         CommonModule,
         ReactiveFormsModule
     ],
     exports: [
-        QuestionFormComponent,
-        DynamicFormQuestionComponent
+        DynamicFormComponent,
+        FormQuestionComponent
     ],
     providers: [
         QuestionControlService
