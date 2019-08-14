@@ -6,7 +6,10 @@ import { FormQuestionComponent } from './components/form-question/form-question.
 import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-    declarations: [DynamicFormComponent, FormQuestionComponent],
+    declarations: [
+        DynamicFormComponent,
+        FormQuestionComponent
+    ],
     imports: [
         CommonModule,
         ReactiveFormsModule
