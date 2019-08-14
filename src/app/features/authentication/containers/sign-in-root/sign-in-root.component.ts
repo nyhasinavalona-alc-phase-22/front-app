@@ -19,8 +19,8 @@ export class SignInRootComponent implements OnInit {
     ngOnInit() {
         this.questions = [
             new TextBoxQuestion({
-                type: 'email',
-                key: 'email',
+                type: 'text',
+                key: 'userName',
                 label: '',
                 required: true,
                 order: 1

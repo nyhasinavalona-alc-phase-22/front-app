@@ -7,6 +7,6 @@ export const enum AuthenticationActionsTypes {
     SIGN_IN_SUCCESS = '[AUTHENTICATION] Sign in Success'
 }
 
-export const signIn = createAction(AuthenticationActionsTypes.SIGN_IN, props<{ email: string, password: string }>());
+export const signIn = createAction(AuthenticationActionsTypes.SIGN_IN, props<{ userName: string, password: string }>());
 export const signInFail = createAction(AuthenticationActionsTypes.SIGN_IN_FAIL, props<{ error: HttpErrorResponse }>());
 export const signInSuccess = createAction(AuthenticationActionsTypes.SIGN_IN_SUCCESS, props<{ user: object }>());
