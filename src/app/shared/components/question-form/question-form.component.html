@@ -2,5 +2,5 @@
     <ng-container *ngFor="let question of questions">
         <app-dynamic-form-question [form]="form" [question]="question"></app-dynamic-form-question>
     </ng-container>
-    <button [disabled]="!form.valid">{{ 'Submit' || buttonLabel }}</button>
+    <button [disabled]="!form.valid">{{ buttonLabel || 'Submit' }}</button>
 </form>
