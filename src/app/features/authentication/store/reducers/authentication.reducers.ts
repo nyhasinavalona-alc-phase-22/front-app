@@ -20,9 +20,9 @@ export const initialState: AuthenticationState = {
 
 const reducer = createReducer(
     initialState,
-    on(signIn, state => ({...state, signing: true})),
-    on(signInFail, (state, {error}) => ({...state, signed: false, signing: false, signInError: error})),
-    on(signInSuccess, (state, {user}) => ({...state, currentUser: user, signing: false, signed: true}))
+    on(signIn, state => ({ ...state, signing: true })),
+    on(signInFail, (state, { error }) => ({ ...state, signed: false, signing: false, signInError: error })),
+    on(signInSuccess, (state, { user }) => ({ ...state, currentUser: user, signing: false, signed: true }))
 );
 
 export function authenticationReducer(state: AuthenticationState | undefined, action: Action) {
