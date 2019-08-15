@@ -7,6 +7,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDBService } from './services/in-memory-db.service';
 
 @NgModule({
     declarations: [],
@@ -14,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
         CommonModule,
         AuthenticationModule,
         HttpClientModule,
+        environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemoryDBService),
         StoreModule.forRoot(reducers, {
             metaReducers,
             runtimeChecks: {
