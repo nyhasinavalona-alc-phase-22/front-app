@@ -7,7 +7,6 @@ import { of } from 'rxjs';
 
 @Injectable()
 export class AuthenticationEffects {
-    @Effect()
     signIn$ = createEffect(() => this.actions$.pipe(
         ofType(signIn),
         switchMap((action) =>
