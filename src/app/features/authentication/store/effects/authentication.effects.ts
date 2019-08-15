@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Actions, createEffect, Effect, ofType } from '@ngrx/effects';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { signIn, signInFail, signInSuccess } from '../actions/authentication.actions';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service';
