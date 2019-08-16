@@ -12,11 +12,13 @@ import { InMemoryDBService } from './services/in-memory-db.service';
 import { HomeComponent } from './containers/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { CoreRoutingModule } from './core-routing.module';
 
 @NgModule({
     declarations: [HomeComponent, HeaderComponent, SidenavComponent],
     imports: [
         CommonModule,
+        CoreRoutingModule,
         AuthenticationModule,
         HttpClientModule,
         environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemoryDBService),
@@ -29,7 +31,8 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
         }),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
         StoreRouterConnectingModule.forRoot()
-    ]
+    ],
+    providers: []
 })
 export class CoreModule {
 }
