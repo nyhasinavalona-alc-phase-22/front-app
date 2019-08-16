@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action, createReducer, on } from '@ngrx/store';
 import { signIn, signInFail, signInSuccess } from '../actions/authentication.actions';
+import { User } from '../../types/user.interface';
 
 export const authenticationStateKey = 'authentication';
 
@@ -8,7 +9,7 @@ export interface AuthenticationState {
     signInError: HttpErrorResponse;
     signing: boolean;
     signed: boolean;
-    currentUser: object;
+    currentUser: User;
 }
 
 export const initialState: AuthenticationState = {
