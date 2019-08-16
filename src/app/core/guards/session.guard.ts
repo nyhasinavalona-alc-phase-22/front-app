@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, CanActivate, CanActivateChild, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { select, Store } from '@ngrx/store';
 import { State } from '../store/reducers/app.reducers';
@@ -8,7 +8,7 @@ import { getSigned } from '../../features/authentication/store/selectors/authent
 @Injectable({
     providedIn: 'root'
 })
-export class SessionGuard implements CanActivate {
+export class SessionGuard implements CanActivate, CanActivateChild {
     constructor(private store: Store<State>) {
     }
 
@@ -18,4 +18,7 @@ export class SessionGuard implements CanActivate {
         return this.store.pipe(select(getSigned));
     }
 
+    canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+        return this.store.pipe(select(getSigned));
+    }
 }
