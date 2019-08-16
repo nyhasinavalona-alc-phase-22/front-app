@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { User } from '../../features/authentication/types/user.interface';
+import { User } from '../../features/access-management/types/user.interface';
 
 @Injectable()
 export class InMemoryDBService implements InMemoryDbService {
