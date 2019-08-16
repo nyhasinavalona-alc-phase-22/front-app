@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticatonServiceInterface } from './authenticaton-service-interface';
-import { User } from '../types/user.interface';
+import { User } from '../../access-management/types/user.interface';
 import { Observable } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { map, tap } from 'rxjs/operators';

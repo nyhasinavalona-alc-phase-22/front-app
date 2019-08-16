@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Action, createReducer, on } from '@ngrx/store';
 import { signIn, signInFail, signInSuccess } from '../actions/authentication.actions';
-import { User } from '../../types/user.interface';
+import { User } from '../../../access-management/types/user.interface';
 
 export const authenticationStateKey = 'authentication';
 
