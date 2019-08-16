@@ -3,15 +3,16 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { signIn, signInFail, signInSuccess } from '../actions/authentication.actions';
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { AuthenticationService } from '../../services/authentication.service';
+import { User } from '../../types/user.interface';
 import { of } from 'rxjs';
 
 @Injectable()
 export class AuthenticationEffects {
     signIn$ = createEffect(() => this.actions$.pipe(
         ofType(signIn),
-        switchMap((action) =>
-            this.authenticationService.signIn({ userName: action.userName, password: action.password }).pipe(
-                map((response: object) => signInSuccess({ user: response })),
+        switchMap((action) => this.authenticationService
+            .signIn({ userName: action.userName, password: action.password }).pipe(
+                map((user: User) => signInSuccess({ user })),
                 catchError((error) => of(signInFail({ error })))
             ))
     ));
