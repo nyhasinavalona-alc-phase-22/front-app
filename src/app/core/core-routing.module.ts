@@ -12,7 +12,12 @@ const routes: Routes = [
         children: [
             {
                 path: 'access-management',
-                loadChildren: './features/access-management/access-management.module#AccessManagementModule'
+                loadChildren: '../features/access-management/access-management.module#AccessManagementModule'
+            },
+            {
+                path: '',
+                redirectTo: 'access-management',
+                pathMatch: 'full'
             }
         ]
     }
