@@ -9,9 +9,12 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDBService } from './services/in-memory-db.service';
+import { HomeComponent } from './containers/home/home.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 @NgModule({
-    declarations: [],
+    declarations: [HomeComponent, HeaderComponent, SidenavComponent],
     imports: [
         CommonModule,
         AuthenticationModule,
