@@ -7,6 +7,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { EffectsModule } from '@ngrx/effects';
 import { AuthenticationEffects } from './store/effects/authentication.effects';
 import { AuthenticationService } from './services/authentication.service';
+import { environment } from '../../../environments/environment';
+import { AuthenticationMockService } from './services/authentication-mock.service';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,10 @@ import { AuthenticationService } from './services/authentication.service';
         EffectsModule.forRoot([AuthenticationEffects])
     ],
     providers: [
-        AuthenticationService
+        {
+            provide: AuthenticationService,
+            useClass: environment.production ? AuthenticationService : AuthenticationMockService
+        }
     ]
 })
 export class AuthenticationModule {
