@@ -10,13 +10,15 @@ export interface AuthenticationState {
     signing: boolean;
     signed: boolean;
     currentUser: User;
+    token: string;
 }
 
 export const initialState: AuthenticationState = {
     signInError: undefined,
     signing: false,
     signed: false,
-    currentUser: undefined
+    currentUser: undefined,
+    token: undefined
 };
 
 const reducer = createReducer(
@@ -29,7 +31,13 @@ const reducer = createReducer(
         signInError: error,
         currentUser: undefined
     })),
-    on(signInSuccess, (state, { user }) => ({ ...state, currentUser: user, signing: false, signed: true }))
+    on(signInSuccess, (state, { user, token }) => ({
+        ...state,
+        currentUser: user,
+        token,
+        signing: false,
+        signed: true
+    }))
 );
 
 export function authenticationReducer(state: AuthenticationState | undefined, action: Action) {
