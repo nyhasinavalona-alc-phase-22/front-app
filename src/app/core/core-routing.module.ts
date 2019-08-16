@@ -7,7 +7,14 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeRootComponent,
-        canActivate: [SessionGuard]
+        canActivate: [SessionGuard],
+        canActivateChild: [SessionGuard],
+        children: [
+            {
+                path: 'access-management',
+                loadChildren: './features/access-management/access-management.module#AccessManagementModule'
+            }
+        ]
     }
 ];
 
