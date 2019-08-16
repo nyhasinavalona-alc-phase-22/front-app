@@ -1,6 +1,6 @@
 import { Observable } from 'rxjs';
-import { User } from '../../access-management/types/user.interface';
+import { AuthenticationResponse } from '../types/authentication-response.interface';
 
 export interface AuthenticatonServiceInterface {
-    signIn(payload: { userName: string, password: string }): Observable<User>;
+    signIn(payload: { userName: string, password: string }): Observable<AuthenticationResponse>;
 }
