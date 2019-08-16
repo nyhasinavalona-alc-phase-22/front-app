@@ -13,6 +13,9 @@ import { HomeRootComponent } from './containers/home-root/home-root.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { CoreRoutingModule } from './core-routing.module';
+import { EffectsModule } from '@ngrx/effects';
+import { RouterEffects } from './store/effects/router.effects';
+import { AuthenticationEffects } from '../features/authentication/store/effects/authentication.effects';
 
 @NgModule({
     declarations: [
@@ -33,6 +36,7 @@ import { CoreRoutingModule } from './core-routing.module';
                 strictActionImmutability: true
             }
         }),
+        EffectsModule.forRoot([RouterEffects, AuthenticationEffects]),
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
         StoreRouterConnectingModule.forRoot()
     ],
