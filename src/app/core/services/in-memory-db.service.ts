@@ -7,6 +7,7 @@ export class InMemoryDBService implements InMemoryDbService {
     createDb(): {} {
         const users: User[] = [
             {
+                id: 1,
                 userName: 'nyhasinavalona',
                 password: 'password'
             }
