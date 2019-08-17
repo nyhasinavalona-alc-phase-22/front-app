@@ -16,6 +16,8 @@ import { CoreRoutingModule } from './core-routing.module';
 import { EffectsModule } from '@ngrx/effects';
 import { RouterEffects } from './store/effects/router.effects';
 import { AuthenticationEffects } from '../features/authentication/store/effects/authentication.effects';
+import { SessionGuard } from './guards/session.guard';
+import { PrivilegesGuard } from './guards/privileges.guard';
 
 @NgModule({
     declarations: [
@@ -40,7 +42,10 @@ import { AuthenticationEffects } from '../features/authentication/store/effects/
         StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
         StoreRouterConnectingModule.forRoot()
     ],
-    providers: []
+    providers: [
+        SessionGuard,
+        PrivilegesGuard
+    ]
 })
 export class CoreModule {
 }
