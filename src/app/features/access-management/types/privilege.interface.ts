@@ -1,5 +1,8 @@
+import { PrivilegeCategories, Privileges } from '../../authentication/constants/privileges.constants';
+
 export interface Privilege {
     id?: any;
     label?: string;
-    name: string;
+    name: Privileges;
+    category?: PrivilegeCategories;
 }
