@@ -5,9 +5,7 @@ import { select, Store } from '@ngrx/store';
 import { State } from '../store/reducers/app.reducers';
 import { getSigned } from '../../features/authentication/store/selectors/authentication.selectors';
 
-@Injectable({
-    providedIn: 'root'
-})
+@Injectable()
 export class SessionGuard implements CanActivate, CanActivateChild {
     constructor(private store: Store<State>) {
     }
