@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { loadUsers, loadUsersFail, loadUsersSuccess } from '../actions/user.actions';
-import { catchError, map, switchMap, tap } from 'rxjs/operators';
+import { catchError, map, switchMap } from 'rxjs/operators';
 import { UserService } from '../../services/user.service';
 import { of } from 'rxjs';
 
@@ -9,7 +9,6 @@ import { of } from 'rxjs';
 export class UserEffects {
     loadUsers$ = createEffect(() => this.actions$.pipe(
         ofType(loadUsers),
-        tap(() => console.log('load users')),
         switchMap((action) => this.userService.loadUsers().pipe(
             map((users) => loadUsersSuccess({ users })),
             catchError((error) => of(loadUsersFail({ error })))
