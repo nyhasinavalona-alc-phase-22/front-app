@@ -7,8 +7,6 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../../environments/environment';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDBService } from './services/in-memory-db.service';
 import { HomeRootComponent } from './containers/home-root/home-root.component';
 import { HeaderComponent } from './components/header/header.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
@@ -18,6 +16,7 @@ import { RouterEffects } from './store/effects/router.effects';
 import { AuthenticationEffects } from '../features/authentication/store/effects/authentication.effects';
 import { SessionGuard } from './guards/session.guard';
 import { PrivilegesGuard } from './guards/privileges.guard';
+import { FakeApiModule } from '../features/fake-api/fake-api.module';
 
 @NgModule({
     declarations: [
@@ -30,7 +29,7 @@ import { PrivilegesGuard } from './guards/privileges.guard';
         CoreRoutingModule,
         AuthenticationModule,
         HttpClientModule,
-        environment.production ? [] : HttpClientInMemoryWebApiModule.forRoot(InMemoryDBService),
+        environment.production ? [] : FakeApiModule,
         StoreModule.forRoot(reducers, {
             metaReducers,
             runtimeChecks: {
