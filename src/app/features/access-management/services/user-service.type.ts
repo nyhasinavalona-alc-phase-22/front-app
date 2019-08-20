@@ -1,11 +1,12 @@
 import { Observable } from 'rxjs';
 import { User } from '../types/user.interface';
 import { environment } from '../../../../environments/environment';
+import { UserCriteria } from '../types/user-criteria.interface';
 
 export abstract class UserServiceInterface {
     userUrl = `${ environment.baseUrl }/users`;
 
-    abstract loadUsers(): Observable<User[]>;
+    abstract loadUsers(criteria: UserCriteria): Observable<User[]>;
 
     abstract loadUser(user: User): Observable<User>;
 

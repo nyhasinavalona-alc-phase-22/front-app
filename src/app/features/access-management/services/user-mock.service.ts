@@ -4,6 +4,8 @@ import { User } from '../types/user.interface';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { UserCriteria } from '../types/user-criteria.interface';
+import { paginate } from '../../../shared/utils/paginate.util';
 
 @Injectable()
 export class UserMockService extends UserServiceInterface {
@@ -11,9 +13,9 @@ export class UserMockService extends UserServiceInterface {
         super();
     }
 
-    loadUsers(): Observable<User[]> {
+    loadUsers(criteria: UserCriteria): Observable<User[]> {
         return this.http.get(`${ this.userUrl }`).pipe(
-            map((users: User[]) => users)
+            map((users: User[]) => paginate<User>(users, criteria.paginator))
         );
     }
 
