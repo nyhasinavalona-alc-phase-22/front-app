@@ -9,7 +9,7 @@ import { of } from 'rxjs';
 export class UserEffects {
     loadUsers$ = createEffect(() => this.actions$.pipe(
         ofType(loadUsers),
-        switchMap((action) => this.userService.loadUsers().pipe(
+        switchMap((action) => this.userService.loadUsers({ paginator: action.paginator }).pipe(
             map((users) => loadUsersSuccess({ users })),
             catchError((error) => of(loadUsersFail({ error })))
         ))

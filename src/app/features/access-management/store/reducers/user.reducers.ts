@@ -19,6 +19,7 @@ import {
     updateUserFail,
     updateUserSuccess
 } from '../actions/user.actions';
+import { Paginator } from '../../../../shared/types/paginator.interface';
 
 export const userStateKey = 'user';
 
@@ -44,6 +45,7 @@ export const selectUserEntities = selectEntities;
 
 export interface UserState extends EntityState<User> {
     selectedUser: User;
+    paginator: Paginator;
     loadingUsers: boolean;
     usersLoaded: boolean;
     usersLoadingError: HttpErrorResponse;
@@ -63,6 +65,10 @@ export interface UserState extends EntityState<User> {
 
 export const initialState: UserState = adapter.getInitialState({
     selectedUser: undefined,
+    paginator: {
+        page: 1,
+        pageSize: 15
+    },
     loadingUsers: false,
     usersLoaded: false,
     usersLoadingError: undefined,
@@ -82,7 +88,7 @@ export const initialState: UserState = adapter.getInitialState({
 
 export const reducer = createReducer(
     initialState,
-    on(loadUsers, (state) => ({ ...state, loadingUsers: true, usersLoaded: false })),
+    on(loadUsers, (state, { paginator }) => ({ ...state, loadingUsers: true, usersLoaded: false, paginator })),
     on(loadUsersFail, (state, { error }) => ({
         ...state,
         usersLoadingError: error,

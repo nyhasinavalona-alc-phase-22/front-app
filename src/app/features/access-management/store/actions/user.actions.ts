@@ -1,8 +1,9 @@
 import { createAction, props } from '@ngrx/store';
 import { User } from '../../types/user.interface';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Paginator } from '../../../../shared/types/paginator.interface';
 
-export const loadUsers = createAction('[User] Load users');
+export const loadUsers = createAction('[User] Load users', props<{ paginator: Paginator }>());
 export const loadUsersFail = createAction('[User] Load users fail', props<{ error: HttpErrorResponse }>());
 export const loadUsersSuccess = createAction('[User] Load users success', props<{ users: User[] }>());
 

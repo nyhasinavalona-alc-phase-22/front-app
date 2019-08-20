@@ -12,7 +12,7 @@ export class UserRouterEffects {
         ofType(ROUTER_NAVIGATION),
         map((action: RouterNavigationAction) => action.payload.routerState.url),
         filter(url => url.includes('access-management/user')),
-        map(() => loadUsers())
+        map((action) => loadUsers({ paginator: { page: 1, pageSize: 15 } }))
     ));
 
     constructor(private actions$: Actions, private userStore: Store<UserState>) {
