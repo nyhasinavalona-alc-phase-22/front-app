@@ -10,6 +10,7 @@ import { UserEffects } from './store/effects/user.effects';
 import { UserService } from './services/user.service';
 import { environment } from '../../../environments/environment';
 import { UserMockService } from './services/user-mock.service';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
     declarations: [
@@ -19,7 +20,8 @@ import { UserMockService } from './services/user-mock.service';
     imports: [
         CommonModule,
         AccessManagementRoutingModule,
-        EffectsModule.forFeature([UserEffects, UserRouterEffects])
+        EffectsModule.forFeature([UserEffects, UserRouterEffects]),
+        SharedModule
     ],
     providers: [
         {
