@@ -6,7 +6,6 @@ import { map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { UserCriteria } from '../types/user-criteria.interface';
 import { paginate } from '../../../shared/utils/paginate.util';
-import { Paginated } from '../../../shared/types/paginated.interface';
 
 @Injectable()
 export class UserMockService extends UserServiceInterface {
@@ -14,12 +13,9 @@ export class UserMockService extends UserServiceInterface {
         super();
     }
 
-    loadUsers(criteria: UserCriteria): Observable<Paginated<User>> {
+    loadUsers(criteria: UserCriteria): Observable<User[]> {
         return this.http.get(`${ this.userUrl }`).pipe(
-            map((users: User[]) => ({
-                items: paginate<User>(users, criteria.paginator),
-                totalItems: users.length
-            }))
+            map((users: User[]) => paginate<User>(users, criteria.paginator))
         );
     }
 
