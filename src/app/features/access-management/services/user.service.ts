@@ -6,7 +6,6 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiResponse } from '../../../shared/types/api-response.interface';
 import { UserCriteria } from '../types/user-criteria.interface';
-import { Paginated } from '../../../shared/types/paginated.interface';
 
 @Injectable()
 export class UserService extends UserServiceInterface {
@@ -14,7 +13,7 @@ export class UserService extends UserServiceInterface {
         super();
     }
 
-    loadUsers(criteria: UserCriteria): Observable<Paginated<User>> {
+    loadUsers(criteria: UserCriteria): Observable<User[]> {
         return this.http.get(`${ this.userUrl }`).pipe(
             map((response: ApiResponse) => response.data)
         );
