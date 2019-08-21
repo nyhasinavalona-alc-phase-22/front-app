@@ -1,1 +1,2 @@
 <app-data-list [dataSource]="dataSource" [displayedColumns]="displayedColumns" [items]="users$ | async"></app-data-list>
+<app-paginator (paginate)="onPaginate($event)" [total]="totalItems$ | async"></app-paginator>

@@ -3,25 +3,28 @@ import { CommonModule } from '@angular/common';
 import { QuestionControlService } from './services/question-control.service';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
 import { FormQuestionComponent } from './components/form-question/form-question.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { DataListComponent } from './components/data-list/data-list.component';
 import { CdkTableModule } from '@angular/cdk/table';
+import { PaginatorComponent } from './components/paginator/paginator.component';
 
 @NgModule({
     declarations: [
         DynamicFormComponent,
         FormQuestionComponent,
-        DataListComponent
+        DataListComponent,
+        PaginatorComponent
     ],
     imports: [
         CommonModule,
-        ReactiveFormsModule,
+        FormsModule,
         CdkTableModule
     ],
     exports: [
         DynamicFormComponent,
         FormQuestionComponent,
-        DataListComponent
+        DataListComponent,
+        PaginatorComponent
     ],
     providers: [
         QuestionControlService

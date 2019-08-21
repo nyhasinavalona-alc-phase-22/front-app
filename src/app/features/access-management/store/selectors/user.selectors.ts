@@ -14,6 +14,8 @@ export const getUserIds = createSelector(getUserState, selectUserIds);
 
 export const getUsers = createSelector(getUserState, selectUsers);
 
+export const getTotalItems = createSelector(getUserState, (state) => state.totalItems);
+
 export const getUserEntities = createSelector(getUserState, selectUserEntities);
 
 export const getUserTotal = createSelector(getUserState, selectUserTotal);

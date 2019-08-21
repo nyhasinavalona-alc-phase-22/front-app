@@ -44,6 +44,7 @@ export const selectUserTotal = selectTotal;
 export const selectUserEntities = selectEntities;
 
 export interface UserState extends EntityState<User> {
+    totalItems: number;
     selectedUser: User;
     paginator: Paginator;
     loadingUsers: boolean;
@@ -64,6 +65,7 @@ export interface UserState extends EntityState<User> {
 }
 
 export const initialState: UserState = adapter.getInitialState({
+    totalItems: undefined,
     selectedUser: undefined,
     paginator: {
         page: 1,
@@ -95,10 +97,11 @@ export const reducer = createReducer(
         loadingUsers: false,
         usersLoaded: false
     })),
-    on(loadUsersSuccess, (state, { users }) => adapter.addAll(users, {
+    on(loadUsersSuccess, (state, { users, totalItems }) => adapter.addAll(users, {
         ...state,
         usersLoaded: true,
-        loadingUsers: false
+        loadingUsers: false,
+        totalItems
     })),
     on(loadUser, (state) => ({ ...state, userLoaded: true, loadingUser: false })),
     on(loadUserFail, (state) => ({ ...state, userLoaded: false, loadingUser: false })),

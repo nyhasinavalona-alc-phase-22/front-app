@@ -5,7 +5,7 @@ import { Paginator } from '../../../../shared/types/paginator.interface';
 
 export const loadUsers = createAction('[User] Load users', props<{ paginator: Paginator }>());
 export const loadUsersFail = createAction('[User] Load users fail', props<{ error: HttpErrorResponse }>());
-export const loadUsersSuccess = createAction('[User] Load users success', props<{ users: User[] }>());
+export const loadUsersSuccess = createAction('[User] Load users success', props<{ users: User[], totalItems: number }>());
 
 export const loadUser = createAction('[User] Load user');
 export const loadUserFail = createAction('[User] Load user fail', props<{ error: HttpErrorResponse }>());
