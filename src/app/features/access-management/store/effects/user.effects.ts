@@ -4,8 +4,8 @@ import { loadUsers, loadUsersFail, loadUsersSuccess } from '../actions/user.acti
 import { catchError, map, switchMap } from 'rxjs/operators';
 import { UserService } from '../../services/user.service';
 import { of } from 'rxjs';
-import { Paginated } from '../../../../shared/types/paginated.interface';
 import { User } from '../../types/user.interface';
+import { Paginated } from '../../../../shared/types/paginated.interface';
 
 @Injectable()
 export class UserEffects {
