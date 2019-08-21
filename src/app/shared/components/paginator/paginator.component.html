@@ -1,0 +1,17 @@
+<div class="paginator">
+    <ul>
+        <ng-container *ngIf="total">
+            <li (click)="nbPage > 0 && setPage(1)" class="btn"><<</li>
+            <li (click)="page > 1 && setPage(page - 1)" class="btn"><</li>
+            <li (click)="morePagesBackward()" *ngIf="start > 1" class="btn">...</li>
+            <li (click)="setPage(p)" *ngFor="let p of pages" [class.current]="page === p" class="btn">{{ p }}</li>
+            <li (click)="morePagesForward()" *ngIf="nbPage > end" class="btn">...</li>
+            <li (click)="page < nbPage && setPage(page + 1)" class="btn">></li>
+            <li (click)="nbPage > 0 && setPage(nbPage)" class="btn">>></li>
+        </ng-container>
+    </ul>
+    <select (change)="setPage(1)" [(ngModel)]="pageSize">
+        <option *ngFor="let pageSizeOption of pageSizeOptions">{{ pageSizeOption }}</option>
+    </select>
+</div>
+
