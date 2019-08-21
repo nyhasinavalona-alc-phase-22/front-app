@@ -97,10 +97,11 @@ export const reducer = createReducer(
         loadingUsers: false,
         usersLoaded: false
     })),
-    on(loadUsersSuccess, (state, { users }) => adapter.addAll(users, {
+    on(loadUsersSuccess, (state, { users, totalItems }) => adapter.addAll(users, {
         ...state,
         usersLoaded: true,
-        loadingUsers: false
+        loadingUsers: false,
+        totalItems
     })),
     on(loadUser, (state) => ({ ...state, userLoaded: true, loadingUser: false })),
     on(loadUserFail, (state) => ({ ...state, userLoaded: false, loadingUser: false })),
