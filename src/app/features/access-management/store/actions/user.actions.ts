@@ -2,8 +2,9 @@ import { createAction, props } from '@ngrx/store';
 import { User } from '../../types/user.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Paginator } from '../../../../shared/types/paginator.interface';
+import { Sort } from '../../../../shared/types/sort.interface';
 
-export const loadUsers = createAction('[User] Load users', props<{ paginator: Paginator }>());
+export const loadUsers = createAction('[User] Load users', props<{ paginator: Paginator, sort?: Sort }>());
 export const loadUsersFail = createAction('[User] Load users fail', props<{ error: HttpErrorResponse }>());
 export const loadUsersSuccess = createAction('[User] Load users success', props<{ users: User[], totalItems: number }>());
 
