@@ -7,13 +7,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataListComponent } from './components/data-list/data-list.component';
 import { CdkTableModule } from '@angular/cdk/table';
 import { PaginatorComponent } from './components/paginator/paginator.component';
+import { SortableColumnComponent } from './components/sortable-column/sortable-column.component';
 
 @NgModule({
     declarations: [
         DynamicFormComponent,
         FormQuestionComponent,
         DataListComponent,
-        PaginatorComponent
+        PaginatorComponent,
+        SortableColumnComponent
     ],
     imports: [
         CommonModule,
