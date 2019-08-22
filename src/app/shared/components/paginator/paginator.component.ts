@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 import { Paginator } from '../../types/paginator.interface';
 
 const PAGINATOR_SIZE = 5;
@@ -35,8 +35,8 @@ export class PaginatorComponent implements OnChanges {
         }
     }
 
-    ngOnChanges() {
-        this.updatePages();
+    ngOnChanges(changes: SimpleChanges) {
+        changes.total && this.updatePages();
     }
 
     setPage(page: number) {
@@ -57,7 +57,7 @@ export class PaginatorComponent implements OnChanges {
     }
 
     private generatePages(start: number, end: number): number[] {
-        return Array.from(new Array(end + 1 - start), (x, i) => start + i);
+        return this.start && this.end && Array.from(new Array(end + 1 - start), (x, i) => start + i);
     }
 
     private updatePages() {
