@@ -20,6 +20,7 @@ import {
     updateUserSuccess
 } from '../actions/user.actions';
 import { Paginator } from '../../../../shared/types/paginator.interface';
+import { Sort } from '../../../../shared/types/sort.interface';
 
 export const userStateKey = 'user';
 
@@ -47,6 +48,7 @@ export interface UserState extends EntityState<User> {
     totalItems: number;
     selectedUser: User;
     paginator: Paginator;
+    sort: Sort;
     loadingUsers: boolean;
     usersLoaded: boolean;
     usersLoadingError: HttpErrorResponse;
@@ -71,6 +73,7 @@ export const initialState: UserState = adapter.getInitialState({
         page: 1,
         pageSize: 15
     },
+    sort: undefined,
     loadingUsers: false,
     usersLoaded: false,
     usersLoadingError: undefined,
@@ -90,7 +93,13 @@ export const initialState: UserState = adapter.getInitialState({
 
 export const reducer = createReducer(
     initialState,
-    on(loadUsers, (state, { paginator }) => ({ ...state, loadingUsers: true, usersLoaded: false, paginator })),
+    on(loadUsers, (state, { paginator, sort }) => ({
+        ...state,
+        loadingUsers: true,
+        usersLoaded: false,
+        paginator,
+        sort
+    })),
     on(loadUsersFail, (state, { error }) => ({
         ...state,
         usersLoadingError: error,
