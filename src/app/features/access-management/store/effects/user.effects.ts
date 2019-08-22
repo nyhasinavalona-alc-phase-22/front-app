@@ -11,7 +11,7 @@ import { Paginated } from '../../../../shared/types/paginated.interface';
 export class UserEffects {
     loadUsers$ = createEffect(() => this.actions$.pipe(
         ofType(loadUsers),
-        switchMap((action) => this.userService.loadUsers({ paginator: action.paginator }).pipe(
+        switchMap((action) => this.userService.loadUsers({ paginator: action.paginator, sort: action.sort }).pipe(
             map((data: Paginated<User>) => loadUsersSuccess({ users: data.items, totalItems: data.totalItems })),
             catchError((error) => of(loadUsersFail({ error })))
         ))
