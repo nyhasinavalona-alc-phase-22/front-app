@@ -1,9 +1,9 @@
 <table [dataSource]="dataSource" cdk-table>
     <ng-container *ngFor="let column of displayedColumns" [cdkColumnDef]="column">
-        <th *cdkHeaderCellDef cdk-header-cell>{{ column | titlecase }}</th>
+        <th (sort)="onSort($event)" *cdkHeaderCellDef [sortable]="column" cdk-header-cell>{{ column | titlecase }}</th>
         <td *cdkCellDef="let item" cdk-cell>{{ item[column] }}</td>
     </ng-container>
 
     <tr *cdkHeaderRowDef="displayedColumns" cdk-header-row></tr>
-    <tr *cdkRowDef="let row; columns: displayedColumns" cdk-row></tr>
+    <tr (click)="onClick(row)" *cdkRowDef="let row; columns: displayedColumns" cdk-row></tr>
 </table>
