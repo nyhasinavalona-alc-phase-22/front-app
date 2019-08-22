@@ -7,6 +7,8 @@ import { getTotalItems, getUsers } from '../../store/selectors/user.selectors';
 import { GenericDataSource } from '../../../../shared/components/data-list/generic.data-source';
 import { Paginator } from '../../../../shared/types/paginator.interface';
 import { loadUsers } from '../../store/actions/user.actions';
+import { Sort } from '../../../../shared/types/sort.interface';
+import { UserCriteria } from '../../types/user-criteria.interface';
 
 @Component({
     selector: 'app-user-root',
@@ -17,6 +19,7 @@ export class UserRootComponent implements OnInit {
     users$: Observable<User[]>;
     totalItems$: Observable<number>;
     displayedColumns = ['userName', 'email', 'fullName'];
+    criteria: UserCriteria = { paginator: { page: 1, pageSize: 15 }, sort: undefined };
     dataSource: GenericDataSource<User>;
 
     constructor(private userStore: Store<UserState>) {
@@ -29,6 +32,16 @@ export class UserRootComponent implements OnInit {
     }
 
     onPaginate(paginator: Paginator) {
-        this.userStore.dispatch(loadUsers({ paginator }));
+        this.criteria = { ...this.criteria, paginator };
+        this.userStore.dispatch(loadUsers(this.criteria));
+    }
+
+    onSelection(user: User) {
+        console.log(user);
+    }
+
+    onSort(sort: Sort) {
+        this.criteria = { ...this.criteria, sort };
+        this.userStore.dispatch(loadUsers(this.criteria));
     }
 }
