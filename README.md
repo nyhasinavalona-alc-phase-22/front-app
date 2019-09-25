@@ -1,6 +1,10 @@
-# NgApp
+# Angular NGRX Architecture
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+Base Angular architecture for large scale application, bundled with schematics.
+
+## Getting Started
+
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ## Development server
 
@@ -22,6 +26,12 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Authors
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-   **Ny Hasinavalona R.** - _Initial work_ - [nyhasina](https://github.com/nyhasina)
+-   **Ny Andrianina Mamy R.** - _Initial work_ - [nyandrianinamamy](https://github.com/nyandrianinamamy)
+
+## License
+
+This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details
+
