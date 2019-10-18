@@ -4,13 +4,6 @@
   grid-template-rows: auto 1fr;
   row-gap: 50px;
 
-  .content {
-    padding: 50px;
-    display: grid;
-    grid-template-rows: auto 1fr;
-    row-gap: 50px;
-  }
-
   .page-title {
     justify-self: flex-start;
     display: inline-flex;
