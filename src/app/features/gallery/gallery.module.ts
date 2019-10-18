@@ -6,10 +6,11 @@ import { GalleryHomeRootComponent } from './containers/gallery-home-root/gallery
 import { VideoListComponent } from './components/video-list/video-list.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
 import { VideoDetailsRootComponent } from './containers/video-details-root/video-details-root.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
 
 
 @NgModule({
-  declarations: [GalleryHomeRootComponent, VideoListComponent, VideoCardComponent, VideoDetailsRootComponent],
+  declarations: [GalleryHomeRootComponent, VideoListComponent, VideoCardComponent, VideoDetailsRootComponent, VideoDetailComponent],
   imports: [
     CommonModule,
     GalleryRoutingModule
