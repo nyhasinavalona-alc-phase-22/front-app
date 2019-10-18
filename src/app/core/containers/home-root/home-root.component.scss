@@ -3,3 +3,12 @@ main {
   display: grid;
   grid-template-rows: minmax(9.7vh, 100px) 1fr;
 }
+
+section {
+  display: grid;
+  grid-template-columns: minmax(20.8vw, 400px) 1fr;
+}
+
+router-outlet {
+  display: contents;
+}
