@@ -1,0 +1,5 @@
+@import 'layout.scss';
+
+.content {
+  @extend %titled-content;
+}
