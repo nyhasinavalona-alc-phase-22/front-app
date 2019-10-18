@@ -1,5 +1,9 @@
 @import 'layout.scss';
 
+:host {
+  display: contents;
+}
+
 .content {
   @extend %titled-content;
 }
