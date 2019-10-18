@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { VideoListComponent } from './components/video-list/video-list.component';
+import { GalleryHomeRootComponent } from './containers/gallery-home-root/gallery-home-root.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: VideoListComponent,
+    component: GalleryHomeRootComponent,
   },
 ];
 
