@@ -1,15 +1,16 @@
 .card-list {
-  max-height: calc(245px * 2);
   display: grid;
-  grid-template-columns: repeat(7, 119px);
-  grid-template-rows: repeat(2, 250px);
-  column-gap: 15px;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  column-gap: 30px;
+  max-height: calc(338px * 2);
+  overflow-x: auto;
 }
 
 @media screen and (max-width: 1366px) {
   .card-list {
-    max-height: calc(245px * 2);
-    grid-template-columns: repeat(7, 119px);
+    max-height: calc(220px * 2);
+    grid-template-columns: repeat(6, 1fr);
     grid-template-rows: repeat(2, 250px);
     column-gap: 15px;
   }
