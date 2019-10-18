@@ -1,0 +1,7 @@
+.card-list {
+  max-height: calc(245px * 2);
+  display: grid;
+  grid-template-columns: repeat(7, 119px);
+  grid-template-rows: repeat(2, 250px);
+  column-gap: 15px;
+}
