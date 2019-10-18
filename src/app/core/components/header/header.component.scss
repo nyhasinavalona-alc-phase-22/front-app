@@ -55,3 +55,33 @@
   border: none;
   background: transparent;
 }
+
+@media screen and (max-width: 1366px) {
+  .search-bar__control img {
+    width: 80%;
+  }
+
+  .search-bar__control input::placeholder {
+    font-size: 14px;
+  }
+
+  .navbar__brand {
+    flex: 0 0 300px;
+  }
+
+  .navbar__brand img {
+    width: 40%;
+  }
+
+  .navbar__avatar {
+    font-size: 14px;
+  }
+
+  .avatar__user-profile {
+    width: 35px;
+  }
+
+  .button-group__button img {
+    width: 90%;
+  }
+}

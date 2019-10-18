@@ -12,3 +12,13 @@ section {
 router-outlet {
   display: contents;
 }
+
+@media screen and (max-width: 1366px) {
+  main {
+    grid-template-rows: 50px 1fr;
+  }
+
+  section {
+    grid-template-columns: minmax(20.8vw, 300px) 1fr;
+  }
+}

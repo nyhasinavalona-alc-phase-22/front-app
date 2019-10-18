@@ -45,3 +45,26 @@
 .caption__title {
   font-weight: 700;
 }
+
+@media screen and (max-width: 1366px) {
+  .card {
+    width: 119px;
+  }
+
+  .card__image-wrapper {
+    height: 175px;
+    border-radius: 15px;
+  }
+
+  .card__caption p {
+    margin: 5px 0;
+  }
+
+  .caption__title {
+    font-size: 12px !important;
+  }
+
+  .caption__date {
+    font-size: 12px !important;
+  }
+}

@@ -35,3 +35,21 @@
     margin: auto;
   }
 }
+
+@media screen and (max-width: 1366px) {
+  %titled-content {
+    padding: 25px;
+    row-gap: 25px;
+    .page-title figure {
+      margin-right: 10px;
+      width: 40px;
+      height: 40px;
+      border-radius: 5px;
+    }
+
+    .page-title img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
