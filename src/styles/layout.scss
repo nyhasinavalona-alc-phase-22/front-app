@@ -3,6 +3,7 @@
   display: grid;
   grid-template-rows: auto 1fr;
   row-gap: 50px;
+
   .content {
     padding: 50px;
     display: grid;
@@ -40,6 +41,7 @@
   %titled-content {
     padding: 25px;
     row-gap: 25px;
+
     .page-title figure {
       margin-right: 10px;
       width: 40px;
