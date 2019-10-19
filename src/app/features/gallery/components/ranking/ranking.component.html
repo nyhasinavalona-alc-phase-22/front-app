@@ -1,10 +1,13 @@
 <figure class="description__ranking">
-  <img src="/assets/images/star-yellow.svg" alt="" />
-  <img src="/assets/images/star-yellow.svg" alt="" />
-  <img src="/assets/images/star-yellow.svg" alt="" />
-  <img src="/assets/images/star-yellow.svg" alt="" />
-  <img src="/assets/images/star-gray.svg" alt="" />
-  <figcaption>
-    19,546,879 views
-  </figcaption>
+  <img
+    src="/assets/images/star-yellow.svg"
+    alt=""
+    *ngFor="let star of active"
+  />
+  <img
+    src="/assets/images/star-gray.svg"
+    alt=""
+    *ngFor="let star of inactive"
+  />
+  <figcaption>{{ this.views | number }} views</figcaption>
 </figure>
