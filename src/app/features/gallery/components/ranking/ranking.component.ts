@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
 export class RankingComponent {
   active: number[];
   inactive: number[];
-  @Input() set stars(value: number) {
+  @Input() set rated(value: number) {
     this.active = new Array(value).fill(1);
     this.inactive = new Array(5 - value).fill(1);
   }
