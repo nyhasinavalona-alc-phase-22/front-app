@@ -36,17 +36,6 @@
   margin: 20px 0;
 }
 
-.description__ranking {
-  display: flex;
-  align-items: center;
-}
-
-.description__ranking figcaption {
-  margin-left: 10px;
-  font-weight: 700;
-  font-size: 20px;
-}
-
 .description__content {
   margin: 30px 0;
   font-size: 18px;
@@ -144,14 +133,6 @@ button.stream:hover {
 
   .description__header > * {
     margin: 10px 0;
-  }
-
-  .description__ranking img {
-    width: 30px;
-  }
-
-  .description__ranking figcaption {
-    font-size: 14px;
   }
 
   .description__content {

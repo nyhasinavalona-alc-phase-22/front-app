@@ -7,10 +7,11 @@ import { VideoListComponent } from './components/video-list/video-list.component
 import { VideoCardComponent } from './components/video-card/video-card.component';
 import { VideoDetailsRootComponent } from './containers/video-details-root/video-details-root.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
+import { RankingComponent } from './components/ranking/ranking.component';
 
 
 @NgModule({
-  declarations: [GalleryHomeRootComponent, VideoListComponent, VideoCardComponent, VideoDetailsRootComponent, VideoDetailComponent],
+  declarations: [GalleryHomeRootComponent, VideoListComponent, VideoCardComponent, VideoDetailsRootComponent, VideoDetailComponent, RankingComponent],
   imports: [
     CommonModule,
     GalleryRoutingModule
