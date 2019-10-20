@@ -58,7 +58,12 @@
   background-image: url(/assets/images/home.svg);
 }
 
-.menu__item--home--active .item__icon {
+.menu__item--home-active .item__caption,
+.menu__item--favorite-active .item__caption {
+  color: #ea2027;
+}
+
+.menu__item--home-active .item__icon {
   background-image: url(/assets/images/home-active.svg);
 }
 
@@ -66,7 +71,7 @@
   background-image: url(/assets/images/trending.svg);
 }
 
-.menu__item--trending--active .item__icon {
+.menu__item--trending-active .item__icon {
   background-image: url(/assets/images/trending-active.svg);
 }
 
@@ -74,7 +79,7 @@
   background-image: url(/assets/images/favorite.svg);
 }
 
-.menu__item--favorite--active .item__icon {
+.menu__item--favorite-active .item__icon {
   background-image: url(/assets/images/favorite-active.svg);
 }
 

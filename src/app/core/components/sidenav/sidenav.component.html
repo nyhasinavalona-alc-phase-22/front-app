@@ -7,13 +7,21 @@
     </figcaption>
   </figure>
   <ul class="sidebar__menu">
-    <li class="menu__item menu__item--home">
+    <li
+      class="menu__item menu__item--home"
+      routerLinkActive="menu__item--home-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <a routerLink="/home/gallery">
         <span class="item__caption">Home</span>
         <span class="item__icon"></span>
       </a>
     </li>
-    <li class="menu__item menu__item--favorite">
+    <li
+      class="menu__item menu__item--favorite"
+      routerLinkActive="menu__item--favorite-active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <a routerLink="/home/gallery/favorite">
         <span class="item__caption">Favorite</span>
         <span class="item__icon"></span>
