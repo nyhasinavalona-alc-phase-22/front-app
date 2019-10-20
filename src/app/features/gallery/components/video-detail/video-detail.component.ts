@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Video } from '../../types/video.interface';
 
 @Component({
@@ -8,4 +8,5 @@ import { Video } from '../../types/video.interface';
 })
 export class VideoDetailComponent {
   @Input() video: Video;
+  @Output() pin: EventEmitter<Video> = new EventEmitter<Video>();
 }
