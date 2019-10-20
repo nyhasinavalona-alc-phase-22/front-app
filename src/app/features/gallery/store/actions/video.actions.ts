@@ -23,3 +23,15 @@ export const loadVideoSuccess = createAction(
   '[VIDEO] Load Video Success',
   props<{ video: Video }>(),
 );
+export const updateVideo = createAction(
+  '[VIDEO] Update Video',
+  props<{ video: Video }>(),
+);
+export const updateVideoFail = createAction(
+  '[VIDEO] Update Video Fail',
+  props<{ error: HttpErrorResponse }>(),
+);
+export const updateVideoSuccess = createAction(
+  '[VIDEO] Update Video Success',
+  props<{ video: Video }>(),
+);

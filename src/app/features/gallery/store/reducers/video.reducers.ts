@@ -8,6 +8,9 @@ import {
   loadVideosFail,
   loadVideosSuccess,
   loadVideoSuccess,
+  updateVideo,
+  updateVideoFail,
+  updateVideoSuccess,
 } from '../actions/video.actions';
 
 export const videoStateKey = 'video';
@@ -19,6 +22,9 @@ export interface VideoState {
   loadingVideo: boolean;
   videoLoaded: boolean;
   loadingVideoError: HttpErrorResponse;
+  piningVideo: boolean;
+  videoPined: boolean;
+  piningVideoError: HttpErrorResponse;
   videos: Video[];
   video: Video;
 }
@@ -32,6 +38,9 @@ export const initialState: VideoState = {
   videoLoaded: false,
   loadingVideoError: undefined,
   video: undefined,
+  piningVideoError: undefined,
+  piningVideo: false,
+  videoPined: false,
 };
 
 const reducer = createReducer(
@@ -69,6 +78,23 @@ const reducer = createReducer(
     loadingVideo: false,
     videoLoaded: true,
     video,
+  })),
+  on(updateVideo, (state) => ({
+    ...state,
+    piningVideo: true,
+    videoPined: false,
+  })),
+  on(updateVideoFail, (state, { error }) => ({
+    ...state,
+    piningVideo: false,
+    videoPined: false,
+    piningVideoError: error,
+  })),
+  on(updateVideoSuccess, (state, { video }) => ({
+    ...state,
+    piningVideo: false,
+    videoPined: true,
+    videos: state.videos.map((v) => (v.id === video.id ? video : v)),
   })),
 );
 

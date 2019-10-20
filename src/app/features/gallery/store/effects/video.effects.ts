@@ -10,6 +10,9 @@ import {
   loadVideosFail,
   loadVideosSuccess,
   loadVideoSuccess,
+  updateVideo,
+  updateVideoFail,
+  updateVideoSuccess,
 } from '../actions/video.actions';
 
 @Injectable()
@@ -35,6 +38,25 @@ export class VideoEffects {
           catchError((error) => of(loadVideoFail({ error }))),
         ),
       ),
+    ),
+  );
+
+  updateVideo$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateVideo),
+      switchMap((action) =>
+        this.videoService.updateVideo(action.video).pipe(
+          map((response) => updateVideoSuccess({ video: action.video })),
+          catchError((error) => of(updateVideoFail({ error }))),
+        ),
+      ),
+    ),
+  );
+
+  updateVideoSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(updateVideoSuccess),
+      map((action) => loadVideo({ id: String(action.video.id) })),
     ),
   );
 
