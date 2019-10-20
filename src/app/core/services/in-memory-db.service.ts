@@ -19,7 +19,7 @@ export class InMemoryDBService implements InMemoryDbService {
         title: 'Spider-man: Homecoming',
         poster: 'homecoming.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -28,7 +28,7 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
@@ -62,7 +62,7 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
@@ -70,7 +70,7 @@ export class InMemoryDBService implements InMemoryDbService {
         title: 'Annabelle: Creation',
         poster: 'annabelle-creation.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -79,15 +79,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 5,
         title: 'Annabelle',
         poster: 'annabelle.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -96,15 +96,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 6,
         title: 'Black panther',
         poster: 'black-panther.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -113,15 +113,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 7,
         title: 'Captain Marvel',
         poster: 'captain-marvel.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -130,15 +130,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 8,
         title: 'Doctor Strange',
         poster: 'doctor-strange.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -147,15 +147,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 9,
         title: 'Dune',
         poster: 'dune.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -164,15 +164,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 10,
         title: 'Avengers: End game',
         poster: 'end-game.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -181,15 +181,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 11,
         title: 'Fall inn love',
         poster: 'fall-inn-love.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -198,15 +198,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 12,
         title: 'The fate of the furious',
         poster: 'fate-of-the-furious.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -215,15 +215,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 13,
         title: 'Avengers: Infinity war',
         poster: 'infinity-war.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -232,15 +232,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 14,
         title: 'Le roi lion',
         poster: 'roi-lion.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -249,15 +249,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 15,
         title: 'Shazam',
         poster: 'shazam.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -266,15 +266,15 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
       {
-        id: 1,
+        id: 16,
         title: 'Thor: Ragnarok',
         poster: 'thor-ragnarok.jpg',
         yearOfProduction: 2017,
-        rated: 4,
+        rated: this.randomRating(),
         synopsis: `Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
         At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
@@ -283,10 +283,18 @@ export class InMemoryDBService implements InMemoryDbService {
         sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
         sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
         no sea takimata sanctus est Lorem ipsum dolor sit amet. `,
-        views: 46848984,
+        views: this.randomViews(),
         pined: false,
       },
     ];
     return { users, videos };
+  }
+
+  randomViews(): number {
+    return +(Math.random() * Math.pow(10, 6));
+  }
+
+  randomRating(): number {
+    return Math.floor(Math.random() * 6);
   }
 }
