@@ -14,7 +14,7 @@ export class VideoRouterEffects {
       filter((action: RouterNavigationAction) =>
         action.payload.routerState.url.includes('home/gallery'),
       ),
-      map(() => loadVideos()),
+      map(() => loadVideos({ filters: {} })),
     ),
   );
 

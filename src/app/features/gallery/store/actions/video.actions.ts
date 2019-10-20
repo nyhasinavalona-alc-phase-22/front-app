@@ -2,7 +2,10 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { createAction, props } from '@ngrx/store';
 import { Video } from '../../types/video.interface';
 
-export const loadVideos = createAction('[VIDEO] Load Videos');
+export const loadVideos = createAction(
+  '[VIDEO] Load Videos',
+  props<{ filters: object }>(),
+);
 export const loadVideosFail = createAction(
   '[VIDEO] Load Videos Fail',
   props<{ error: HttpErrorResponse }>(),

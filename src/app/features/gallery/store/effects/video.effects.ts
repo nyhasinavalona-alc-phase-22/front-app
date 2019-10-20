@@ -21,7 +21,7 @@ export class VideoEffects {
     this.actions$.pipe(
       ofType(loadVideos),
       switchMap((action) =>
-        this.videoService.loadVideos().pipe(
+        this.videoService.loadVideos({ ...action.filters }).pipe(
           map((videos) => loadVideosSuccess({ videos })),
           catchError((error) => of(loadVideosFail({ error }))),
         ),

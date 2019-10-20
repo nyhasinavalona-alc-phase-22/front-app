@@ -8,8 +8,10 @@ import { Video } from '../types/video.interface';
 export class VideoService {
   constructor(private http: HttpClient) {}
 
-  loadVideos(): Observable<Video[]> {
-    return this.http.get<Video[]>(`${environment.baseUrl}/videos`);
+  loadVideos(filters: object): Observable<Video[]> {
+    return this.http.get<Video[]>(`${environment.baseUrl}/videos`, {
+      params: { ...filters },
+    });
   }
 
   loadVideo(id: number | string): Observable<Video> {
