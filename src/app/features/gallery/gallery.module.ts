@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
+import { SharedModule } from 'src/app/shared/shared.module';
 import { RankingComponent } from './components/ranking/ranking.component';
 import { VideoCardComponent } from './components/video-card/video-card.component';
 import { VideoDetailComponent } from './components/video-detail/video-detail.component';
@@ -24,6 +25,7 @@ import { VideoEffects } from './store/effects/video.effects';
   imports: [
     CommonModule,
     GalleryRoutingModule,
+    SharedModule,
     EffectsModule.forFeature([VideoEffects, VideoRouterEffects]),
   ],
   providers: [VideoService],
