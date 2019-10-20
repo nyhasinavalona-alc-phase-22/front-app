@@ -11,3 +11,15 @@ export const loadVideosSuccess = createAction(
   '[VIDEO] Load Videos Success',
   props<{ videos: Video[] }>(),
 );
+export const loadVideo = createAction(
+  '[VIDEO] Load Video',
+  props<{ id: string }>(),
+);
+export const loadVideoFail = createAction(
+  '[VIDEO] Load Video Fail',
+  props<{ error: HttpErrorResponse }>(),
+);
+export const loadVideoSuccess = createAction(
+  '[VIDEO] Load Video Success',
+  props<{ video: Video }>(),
+);

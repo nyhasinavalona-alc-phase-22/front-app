@@ -11,4 +11,8 @@ export class VideoService {
   loadVideos(): Observable<Video[]> {
     return this.http.get<Video[]>(`${environment.baseUrl}/videos`);
   }
+
+  loadVideo(id: number | string): Observable<Video> {
+    return this.http.get<Video>(`${environment.baseUrl}/videos/${id}`);
+  }
 }

@@ -26,3 +26,18 @@ export const getLoadingVideosError = createSelector(
   getVideoState,
   (state: VideoState) => state.loadingVideosError,
 );
+
+export const getVideo = createSelector<State, VideoState, Video>(
+  getVideoState,
+  (state: VideoState) => state.video,
+);
+
+export const getLoadingVideo = createSelector(
+  getVideoState,
+  (state: VideoState) => state.loadingVideo,
+);
+
+export const getVideoLoaded = createSelector(
+  getVideoState,
+  (state: VideoState) => state.videoLoaded,
+);
