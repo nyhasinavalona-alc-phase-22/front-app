@@ -11,6 +11,6 @@ export class VideoDetailComponent {
   @Output() pin: EventEmitter<Video> = new EventEmitter<Video>();
 
   onPin() {
-    this.pin.emit({ ...this.video, pined: true });
+    this.pin.emit({ ...this.video, pined: !this.video.pined });
   }
 }
