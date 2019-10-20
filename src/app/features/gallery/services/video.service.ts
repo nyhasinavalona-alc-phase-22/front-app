@@ -15,4 +15,11 @@ export class VideoService {
   loadVideo(id: number | string): Observable<Video> {
     return this.http.get<Video>(`${environment.baseUrl}/videos/${id}`);
   }
+
+  updateVideo(video: Video): Observable<Video> {
+    return this.http.put<Video>(
+      `${environment.baseUrl}/videos/${video.id}`,
+      video,
+    );
+  }
 }
