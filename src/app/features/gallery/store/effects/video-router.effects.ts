@@ -1,24 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { ROUTER_NAVIGATION } from '@ngrx/router-store';
-import { of } from 'rxjs';
-import { catchError, map, switchMap } from 'rxjs/operators';
-import { VideoService } from '../../services/video.service';
-import { loadVideosFail, loadVideosSuccess } from '../actions/video.actions';
+import { RouterNavigationAction, ROUTER_NAVIGATION } from '@ngrx/router-store';
+import { filter, map } from 'rxjs/operators';
+import { loadVideos } from '../actions/video.actions';
 
 @Injectable()
-export class VideoEffects {
+export class VideoRouterEffects {
   loadVideos$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ROUTER_NAVIGATION),
-      switchMap((action) =>
-        this.videoService.loadVideos().pipe(
-          map((videos) => loadVideosSuccess({ videos })),
-          catchError((error) => of(loadVideosFail({ error }))),
-        ),
+      filter((action: RouterNavigationAction) =>
+        action.payload.routerState.url.includes('home/gallery'),
       ),
+      map(() => loadVideos()),
     ),
   );
-
-  constructor(private actions$: Actions, private videoService: VideoService) {}
+  constructor(private actions$: Actions) {}
 }
