@@ -2,16 +2,16 @@
   <div class="card__image-wrapper">
     <div
       class="card__card-control"
-      [routerLink]="['/home/gallery/details', '84r6z8ae4rsqqsfde8']"
+      [routerLink]="['/home/gallery/details', video.id]"
     >
       <img src="/assets/images/play-white-filled.svg" alt="play" />
     </div>
-    <img src="/assets/images/posters/infinity-war.jpg" alt="infinity war" />
+    <img [src]="video.poster | url" alt="infinity war" />
   </div>
   <div class="card__caption">
     <p class="caption__title">
-      Avengers: Infinity war
+      {{ video.title }}
     </p>
-    <p class="caption__date">2018</p>
+    <p class="caption__date">{{ video.yearOfProduction }}</p>
   </div>
 </div>
