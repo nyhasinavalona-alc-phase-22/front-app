@@ -11,10 +11,24 @@ export class VideoRouterEffects {
   loadVideos$ = createEffect(() =>
     this.actions$.pipe(
       ofType(ROUTER_NAVIGATION),
-      filter((action: RouterNavigationAction) =>
-        action.payload.routerState.url.includes('home/gallery'),
+      filter(
+        (action: RouterNavigationAction) =>
+          action.payload.routerState.url.includes('home/gallery') &&
+          !action.payload.routerState.url.includes('details'),
       ),
       map(() => loadVideos({ filters: {} })),
+    ),
+  );
+
+  loadFavoriteVideos$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(ROUTER_NAVIGATION),
+      filter(
+        (action: RouterNavigationAction) =>
+          action.payload.routerState.url.includes('home/gallery/favorite') &&
+          !action.payload.routerState.url.includes('details'),
+      ),
+      map(() => loadVideos({ filters: { pined: true } })),
     ),
   );
 

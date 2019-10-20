@@ -9,6 +9,10 @@ const routes: Routes = [
     component: GalleryHomeRootComponent,
   },
   {
+    path: 'favorite',
+    component: GalleryHomeRootComponent,
+  },
+  {
     path: 'details/:videoId',
     component: VideoDetailsRootComponent,
   },
