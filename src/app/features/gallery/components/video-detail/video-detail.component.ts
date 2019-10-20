@@ -9,4 +9,8 @@ import { Video } from '../../types/video.interface';
 export class VideoDetailComponent {
   @Input() video: Video;
   @Output() pin: EventEmitter<Video> = new EventEmitter<Video>();
+
+  onPin() {
+    this.pin.emit({ ...this.video, pined: true });
+  }
 }

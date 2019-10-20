@@ -5,5 +5,8 @@
     </figure>
     <h2>Details</h2>
   </div>
-  <app-video-detail [video]="video$ | async"></app-video-detail>
+  <app-video-detail
+    [video]="video$ | async"
+    (pin)="onPin($event)"
+  ></app-video-detail>
 </article>
