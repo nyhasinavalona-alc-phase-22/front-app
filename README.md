@@ -9,6 +9,8 @@ These instructions will get you a copy of the project up and running on your loc
 ## Clone the project and install project dependencies
 
 `git@github.com:nyhasinavalona-alc-phase-22/front-app.git`
+`cd front-app`
+`npm install`
 
 ## Development server
 
@@ -22,3 +24,5 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 This project is licensed under the BSD License - see the [LICENSE.md](LICENSE.md) file for details
 
+
+`git@github.com:nyhasinavalona-alc-phase-22/front-app.git`
