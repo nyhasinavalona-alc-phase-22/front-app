@@ -1,14 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeRootComponent } from './containers/home-root/home-root.component';
-import { SessionGuard } from './guards/session.guard';
 
 const routes: Routes = [
   {
     path: 'home',
     component: HomeRootComponent,
-    canActivate: [SessionGuard],
-    canActivateChild: [SessionGuard],
     children: [
       {
         path: 'gallery',
