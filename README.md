@@ -1,6 +1,4 @@
-# Angular NGRX Architecture
-
-Base Angular architecture for large scale application, bundled with schematics.
+# ALC phase 2 project
 
 ## Getting Started
 
