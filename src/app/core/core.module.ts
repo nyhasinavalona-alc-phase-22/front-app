@@ -25,9 +25,7 @@ import { metaReducers, reducers } from './store/reducers/app.reducers';
     CoreRoutingModule,
     AuthenticationModule,
     HttpClientModule,
-    environment.production
-      ? []
-      : HttpClientInMemoryWebApiModule.forRoot(InMemoryDBService),
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDBService, { delay: 500 }),
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
