@@ -29,7 +29,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Authors
 
 -   **Ny Hasinavalona R.** - _Initial work_ - [nyhasina](https://github.com/nyhasina)
--   **Ny Andrianina Mamy R.** - _Initial work_ - [nyandrianinamamy](https://github.com/nyandrianinamamy)
 
 ## License
 
