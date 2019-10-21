@@ -7,6 +7,7 @@
   </div>
   <app-video-detail
     [video]="video$ | async"
+    [loading]="loadingVideo$ | async"
     (pin)="onPin($event)"
   ></app-video-detail>
 </article>

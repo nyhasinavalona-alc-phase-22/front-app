@@ -1,4 +1,13 @@
 <div class="details" *ngIf="video">
+  <ngx-spinner
+    bdOpacity="0.5"
+    bdColor="rgba(112,112,112,0.5)"
+    color="#ea2027"
+    type="ball-circus"
+    [fullScreen]="false"
+  >
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
   <figure class="details__poster">
     <img [src]="video.poster | url" alt="Homecoming" />
   </figure>
