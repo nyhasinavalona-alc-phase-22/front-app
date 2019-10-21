@@ -14,8 +14,6 @@ export class VideoListComponent implements OnChanges {
   constructor(private spinner: NgxSpinnerService) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log(this.loading);
-
     if (this.loading) {
       this.spinner.show();
     } else {
