@@ -7,6 +7,8 @@ These instructions will get you a copy of the project up and running on your loc
 ## Clone the project and install project dependencies
 
 ``git@github.com:nyhasinavalona-alc-phase-22/front-app.git``
+``cd front-app``
+``npm install``
 
 ## Development server
 
