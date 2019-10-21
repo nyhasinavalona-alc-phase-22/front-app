@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Video } from '../../types/video.interface';
 
 @Component({
@@ -7,10 +7,19 @@ import { Video } from '../../types/video.interface';
   templateUrl: './video-list.component.html',
   styleUrls: ['./video-list.component.scss'],
 })
-export class VideoListComponent implements OnInit {
-  @Input() videos: Observable<Video[]>;
+export class VideoListComponent implements OnChanges {
+  @Input() videos: Video[];
+  @Input() loading: boolean;
 
-  constructor() {}
+  constructor(private spinner: NgxSpinnerService) {}
 
-  ngOnInit() {}
+  ngOnChanges(changes: SimpleChanges) {
+    console.log(this.loading);
+
+    if (this.loading) {
+      this.spinner.show();
+    } else {
+      this.spinner.hide();
+    }
+  }
 }

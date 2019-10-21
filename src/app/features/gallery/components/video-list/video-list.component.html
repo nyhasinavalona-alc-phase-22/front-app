@@ -1,3 +1,13 @@
 <div class="card-list">
+  <ngx-spinner
+    bdOpacity="0.5"
+    bdColor="rgba(112,112,112,0.5)"
+    size="default"
+    color="#ea2027"
+    type="ball-circus"
+    [fullScreen]="false"
+  >
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
   <app-video-card [video]="video" *ngFor="let video of videos"></app-video-card>
 </div>

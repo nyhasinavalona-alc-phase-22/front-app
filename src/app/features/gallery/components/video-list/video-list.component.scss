@@ -7,6 +7,10 @@
   overflow-x: auto;
 }
 
+ngx-spinner {
+  display: contents;
+}
+
 @media screen and (max-width: 1366px) {
   .card-list {
     max-height: calc(220px * 2);
