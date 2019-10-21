@@ -4,11 +4,18 @@
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-## Clone the project and install project dependencies
+### Clone the project
 
-``git@github.com:nyhasinavalona-alc-phase-22/front-app.git``
-``cd front-app``
-``npm install``
+`git clone git@github.com:nyhasinavalona-alc-phase-22/front-app.git`
+
+### Move into the project directory
+
+`cd front-app`
+
+### Install the project's dependencies
+
+`npm install`
+
 
 ## Development server
 
