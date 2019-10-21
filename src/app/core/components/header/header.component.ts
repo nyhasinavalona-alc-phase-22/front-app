@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
-    selector: 'app-header',
-    templateUrl: './header.component.html',
-    styleUrls: ['./header.component.scss']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  value: string;
 
-    constructor() {
-    }
+  constructor() {}
 
-    ngOnInit() {
-    }
+  ngOnInit() {}
 
+  onSearch(event: KeyboardEvent) {
+    this.search.emit(this.value);
+  }
 }

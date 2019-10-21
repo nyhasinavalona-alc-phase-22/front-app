@@ -1,5 +1,5 @@
 <main>
-  <app-header></app-header>
+  <app-header (search)="onSearch($event)"></app-header>
   <section>
     <app-sidenav></app-sidenav>
     <router-outlet></router-outlet>
